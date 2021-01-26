@@ -159,13 +159,14 @@ return [
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
 //        Illuminate\Translation\TranslationServiceProvider::class,
-        Overtrue\LaravelLang\TranslationServiceProvider::class,//语言包
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
+        Overtrue\LaravelLang\TranslationServiceProvider::class,//语言包
+
 
         /*
          * Application Service Providers...
