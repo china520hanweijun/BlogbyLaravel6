@@ -58,6 +58,10 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
+//        $comments = $article->getComments();
+//        $comments['root'] = $comments[$article['id']];
+//        dd($article->getComments()[0]);
+        return view('articles.show', ['article' => $article]);
     }
 
     /**

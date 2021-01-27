@@ -12,11 +12,18 @@ class Comment extends Model
     /**
      * 关联
      */
+
     public function author(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     public function article(){
         return $this->belongsTo('App\Models\Article');
     }
+
+    //获取其子评论
+    public function replies(){
+        return $this->hasMany('App\Models\Comment', 'parent_id');
+    }
+
 }

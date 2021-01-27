@@ -26,4 +26,19 @@ class Article extends Model
     public function author(){
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    /**
+     * 获取评论 以parent_id分组
+     */
+    public function getComments(){
+        return $this->comments()->with('author')->get()->groupBy('parent_id');
+    }
+
+    /**
+     * 获取博客评论
+     */
+    public function getArticleComments(){
+        return $this->Comments()->with('author')->where('parent_id', '=', 0)->get();
+    }
+
 }
