@@ -12,5 +12,6 @@
         <button type="submit" class="btn btn-success">回复</button>
     @else
         <button type="submit" class="btn btn-success">评论</button>
+        <hr>
     @endif
 </form>
