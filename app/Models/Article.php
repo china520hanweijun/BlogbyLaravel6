@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     //
-    protected $fillable = ['title', 'comment', 'user_id'];
+    protected $fillable = ['title', 'comment', 'user_id', 'category_id'];
     /**
      * 关联
      */
@@ -16,14 +16,14 @@ class Article extends Model
     }
 
     public function tags(){
-        return $this->hasMany('App\Models\Tag');
+        return $this->belongsToMany('App\Models\Tag', 'article_tag', 'article_id', 'tag_id');
     }
 
-    public function categories(){
+    public function category(){
         return $this->belongsTo('App\Models\Category');
     }
 
     public function author(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 }

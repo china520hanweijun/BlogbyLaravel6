@@ -11,5 +11,6 @@ $factory->define(Article::class, function (Faker $faker) {
         'title' => $faker->words(2, true),
         'content' => $faker->paragraphs(4, true),
         'user_id' => $faker->randomDigitNotNull,
+        'category_id' => $faker->randomDigitNotNull,
     ];
 });

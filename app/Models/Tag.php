@@ -14,6 +14,6 @@ class Tag extends Model
      * 关联
      */
     public function article(){
-        return $this->belongsTo('App\Models\Article');
+        return $this->belongsToMany('App\Models\Article');
     }
 }

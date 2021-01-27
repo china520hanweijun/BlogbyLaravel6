@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->longText('content');
             $table->bigInteger('user_id');//作者
+            $table->bigInteger('category_id');
             $table->bigInteger('like_count')->default(0);//点赞数
             $table->bigInteger('comment_count')->default(0);//评论数
             $table->bigInteger('views')->default(0);//浏览量

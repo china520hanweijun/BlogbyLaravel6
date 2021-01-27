@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     /**
+     * 非登录状态只允许查看
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +23,9 @@ class ArticleController extends Controller
     public function index()
     {
         //
+        $articles = Article::paginate(9);
+
+        return view('articles.index', ['articles' => $articles]);
     }
 
     /**

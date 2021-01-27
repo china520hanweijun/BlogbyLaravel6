@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->bigInteger('user_id');//评论用户
             $table->bigInteger('article_id');//评论文章
             $table->bigInteger('like_count')->default(0);//评论点赞数
-            $table->bigInteger('parent_id');//父评id
+            $table->bigInteger('parent_id')->default(0);//父评id
             $table->timestamps();
         });
     }
